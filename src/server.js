@@ -13,6 +13,8 @@ const app = express();
 // Server app configuration goes here
 // middleware, routes, etc 
 
+app.use(express.json());
+
 // app.verb(path, callback);
 app.get("/", (request, response) => {
 	// response.send("<h1>Hello, world!</h1>");
