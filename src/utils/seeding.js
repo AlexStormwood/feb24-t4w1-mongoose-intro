@@ -1,6 +1,8 @@
 const { createPost, findManyPosts, findOnePost } = require("./crud/PostCrud");
 const { dbConnect, dbDisconnect } = require("./database");
 
+require("dotenv").config();
+
 async function seed (){
 	// await dbConnect();
 	
