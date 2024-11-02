@@ -16,6 +16,7 @@ const app = express();
 app.use(express.json());
 
 // app.verb(path, callback);
+// http://localhost:8080/
 app.get("/", (request, response) => {
 	// response.send("<h1>Hello, world!</h1>");
 

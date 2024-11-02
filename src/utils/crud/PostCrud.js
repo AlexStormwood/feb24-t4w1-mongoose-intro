@@ -15,7 +15,7 @@ async function createPost (title, content = null, authorId) {
 
 // findOnePost({title:"Alex's Cool Blog Post"});
 async function findOnePost (query) {
-	let result = await PostModel.findOne(query);
+	let result = await PostModel.findOne(query).populate("author");
 
 	return result;
 }
