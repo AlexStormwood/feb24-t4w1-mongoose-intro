@@ -11,11 +11,26 @@ async function seed (){
 	
 	await createPost(
 		"Example title", 
-		"Example content blah blah blah",
+		[
+			{
+				languageCode: "en",
+				content: "Example content blah blah blah"
+			},
+			{
+				languageCode: "fr",
+				content: "Omelette au fromage"
+			},
+		],
 		newUser.id
 	);
 
-	let resultFindOne = await findOnePost({title: "Example title", content: "Example content blah blah blah"});
+	let resultFindOne = await findOnePost(
+		{
+			title: "Example title", 
+			"content.languageCode": "en", 
+			"content.content": "Example content blah blah blah"
+		}
+	);
 
 	console.log(resultFindOne.title);
 	console.log(resultFindOne._id);
